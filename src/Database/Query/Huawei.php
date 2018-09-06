@@ -32,7 +32,7 @@
                             0 `stock`,
                             r.`importo_totale` `importoTotale`
                         from db_sm.righe_vendita as r left join archivi.negozi as n on n.codice_interno = r.`negozio`
-                        where r.`data` >= '2018-08-01' and r.`linea` like '%HUAWEI%' and r.`riparazione` = 0 and
+                        where r.`data` >= '2018-08-01' and (r.`linea` = 'HUAWEI TEL' or r.`linea` = 'HUAWEI TAB') and r.`riparazione` = 0 and
                             r.`codice` not in ('0501754','0501763','0538797','0538804','0538831','0538840','0546332','0556151','0556160')";
                 $data = [];
                 $stmt = $this->pdo->prepare( $sql );
