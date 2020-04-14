@@ -141,8 +141,9 @@
 
         $mail->From = 'edp@supermedia.it';
         $mail->FromName = 'EDP Supermedia';
-        $mail->addAddress('nicola.pirovano@supermedia.it', 'Nicola Pirovano');     // Add a recipient
-        $mail->addAddress('sergio.guidi@supermedia.it', 'Sergio Guidi');     // Add a recipient
+        $mail->addAddress('marco.gnecchi@supermedia.it', 'Marco Gnecchi');     // Add a recipient
+        //$mail->addAddress('nicola.pirovano@supermedia.it', 'Nicola Pirovano');     // Add a recipient
+        //$mail->addAddress('sergio.guidi@supermedia.it', 'Sergio Guidi');     // Add a recipient
         //$mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('marco.gnecchi@supermedia.it', 'Marco Gnecchi');
         $mail->addCC('marco.gnecchi@supermedia.it');
