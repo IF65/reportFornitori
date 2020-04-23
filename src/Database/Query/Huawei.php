@@ -32,7 +32,7 @@
                             case when s.`giacenza` < 0 then 0 else s.`giacenza` end  `stock`,
                             r.`importo_totale` `importoTotale`
                         from db_sm.righe_vendita as r left join archivi.negozi as n on n.codice_interno = r.`negozio` left join db_sm.situazioni as s on r.`negozio`=s.`negozio` and r.`codice`=s.`codice_articolo`
-                        where r.`data` >= '$dataInizio' and r.`data` <= ' $dataFine' and (r.`linea` = 'HUAWEI TEL' or r.`linea` = 'HUAWEI TAB' or r.`linea`='HONOR TEL') and r.`riparazione` = 0 and
+                        where r.`data` >= '$dataInizio' and r.`data` <= ' $dataFine' and (r.`linea` like 'HUAWEI%' or r.`linea`='HONOR TEL') and r.`riparazione` = 0 and
                             r.`codice` not in ('0501754','0501763','0538797','0538804','0538831','0538840','0546332','0556151','0556160','0678822','0686341','0686350','0765906','0765915','0765924')
                         order by r.`data`,r.`codice`,r.`negozio`";
                 
