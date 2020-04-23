@@ -28,6 +28,7 @@
 
         $dataFine = (new DateTime( 'now', $timeZone ))->sub( new DateInterval( 'P1D' ) );
         $dataInizio = (new DateTime( 'now', $timeZone ))->sub( new DateInterval( 'P60D' ) );
+        $dataInizio->modify('first day of January this year');
         $periodo = new DatePeriod( $dataInizio, new DateInterval( 'P1D' ), (clone $dataFine)->add( new DateInterval( 'P1D' ) ) );
         foreach ($periodo as $data) {
             $stock[$data->format( 'Y-m-d' )] = $db->huawei->giacenzaAllaData( ['data' => $data->format( 'Y-m-d' )] );
